@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superhero index</title>
+    
 </head>
 <body>
     <h1>List of Heros</h1>
     <ul>
         {% for hero in all_heros %}
-        <li> <h1>{{hero.name}} <a href="{% url 'superheros:detail' hero.id %}"> Click for Details</a><br><a href="{% url 'superheros:edit' hero.id %}"> Click to Edit</a><br><a href="{% url 'superheros:delete' hero.id %}"> Click to delete</a></h1>  </li>
+        <li> <h1>{{hero.name}}<br> <a href="{% url 'superheros:detail' hero.id %}"> Click for Details</a><br><a href="{% url 'superheros:edit' hero.id %}"> Click to Edit</a><br><a href="{% url 'superheros:delete' hero.id %}"> Click to delete</a></h1>  </li>
         {% endfor %}
      </ul>
      <a href="{% url 'superheros:create' %}">Add New Hero</a>
 
 
      <p>
-     {% load static %} <img scr="{% static "superhero_project/superheros/images/flash.jpeg" %} alt="The Flash" />
+     {% load static %} 
+     <img scr="{% static 'superheros/flashthree.png' %}" alt="The Flash" >
      </p>
    
 </body>
