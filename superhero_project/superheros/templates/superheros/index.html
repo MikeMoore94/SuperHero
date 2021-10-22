@@ -14,5 +14,11 @@
         {% endfor %}
      </ul>
      <a href="{% url 'superheros:create' %}">Add New Hero</a>
+
+
+     <p>
+     {% load static %} <img scr="{% static "superhero_project/superheros/images/flash.jpeg" %} alt="The Flash" />
+     </p>
+   
 </body>
 </html>
