@@ -34,3 +34,29 @@ def create(request):
 
     else:
         return render(request, 'superheros/create.html')
+
+def edit(request, hero_id):
+    if request.method == 'POST':
+        details = Superhero.objects.all().update()
+        
+        return HttpResponseRedirect(reverse('superheros:index'))
+    else:
+        details = Superhero.objects.get(pk=hero_id)
+        context = {
+            'hero': details
+        }
+        return render(request, 'superheros/edit.html', context)
+
+
+def delete(request, hero_id):
+    if request.method == 'POST':
+        details = Superhero.objects.get(pk=hero_id)
+        details.delete()
+        return HttpResponseRedirect(reverse('superheros:index'))
+    else:
+        details = Superhero.objects.get(pk=hero_id)
+        context = {
+            'hero': details
+        }
+        return render(request, 'superheros/delete.html', context)
+
