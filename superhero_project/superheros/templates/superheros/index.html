@@ -11,7 +11,7 @@
     <h1>List of Heros</h1>
     <ul>
         {% for hero in all_heros %}
-        <li> <h1>{{hero.name}}<br> <a href="{% url 'superheros:detail' hero.id %}"> Click for Details</a><br><a href="{% url 'superheros:edit' hero.id %}"> Click to Edit</a><br><a href="{% url 'superheros:delete' hero.id %}"> Click to delete</a></h1>  </li>
+        <li> <h3>{{hero.name}}<br> <a href="{% url 'superheros:detail' hero.id %}"> Click for Details</a><br><a href="{% url 'superheros:edit' hero.id %}"> Click to Edit</a><br><a href="{% url 'superheros:delete' hero.id %}"> Click to delete</a></h3>  </li>
         {% endfor %}
      </ul>
      <a href="{% url 'superheros:create' %}">Add New Hero</a>
@@ -19,7 +19,7 @@
 
      <p>
      {% load static %} 
-     <img scr="{% static 'superheros/flashthree.png' %}" alt="The Flash" >
+     <img scr="{% static 'superheros/flash4.png' %}" alt="The Flash" >
      </p>
    
 </body>
